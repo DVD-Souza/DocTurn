@@ -1,15 +1,18 @@
 package com.fsateam.document_convert_api.model;
 
 import lombok.*;
+import org.springframework.data.annotation.Id;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 public class Conversion {
-    private Long id;
+    @Id
+    private UUID id = UUID.randomUUID();
     @NonNull
     private File sourceDocument;
     @NonNull
