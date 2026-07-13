@@ -1,7 +1,9 @@
 package com.fsateam.document_convert_api.model;
 import lombok.*;
+import org.springframework.data.annotation.Id;
 
 import java.nio.file.Path;
+import java.util.UUID;
 
 @Data
 @AllArgsConstructor
@@ -10,7 +12,8 @@ import java.nio.file.Path;
 
 public class File {
     @NonNull
-    private long id;
+    @Id
+    private UUID id = UUID.randomUUID();
 
     @NonNull
     private String name;

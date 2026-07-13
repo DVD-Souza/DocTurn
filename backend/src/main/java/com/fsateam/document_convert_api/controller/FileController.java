@@ -1,12 +1,13 @@
 package com.fsateam.document_convert_api.controller;
 
 
+import com.fsateam.document_convert_api.service.FileService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.util.UUID;
 
 
 @Controller
@@ -21,8 +22,13 @@ public class FileController {
     }
 
     @PostMapping
-    public ResponseEntity<?> FileConversion(@RequestParam("File") MultipartFile file) {
+    public ResponseEntity<?> UploadFile(@RequestParam("File") MultipartFile file) {
        return null;
-    };
 
+    }
+
+    @GetMapping(path = "/{conversionId}")
+    public ResponseEntity<?> DownloadFile(@PathVariable UUID conversionId){
+        return null;
+    }
 }
