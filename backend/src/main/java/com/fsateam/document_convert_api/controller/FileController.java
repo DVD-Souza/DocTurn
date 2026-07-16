@@ -27,8 +27,4 @@ public class FileController {
 
     }
 
-    @GetMapping(path = "/{conversionId}")
-    public ResponseEntity<?> DownloadFile(@PathVariable UUID conversionId){
-        return null;
-    }
 }
